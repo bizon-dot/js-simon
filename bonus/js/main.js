@@ -14,20 +14,9 @@ Descrizione:
 */
 
 let randomNum = randomNumbers();
+drawNumbers(randomNum);
 
-setTimeout(function(randomNumbers){
-    let points = [];
-    for (let index = 0; index < 5; index++) {
-        guessNum = parseInt(prompt(`Inserisci il numero. Numeri rimanenti da inserire ${5 - index}`));
-        if (randomNum.includes(guessNum)){
-            points.push(guessNum);
 
-        }
-    }
-    alert(`Hai indovinato ${points.length} numeri! I seguenti: ${points}`);
-    
-},3000)
-alert(randomNum);
 
 
 /*  
@@ -49,3 +38,22 @@ function randomNumbers() {
     return randomNumbers;
 }
 
+/*  
+    ========================================================================================================
+        2.                              Stampo i numeri nel DOM
+    ========================================================================================================
+    
+*/
+
+function drawNumbers(randomNum) {
+    for (let index = 0; index < randomNum.length; index++) {
+        let divNum = `${randomNum[index]}`
+        let templateBox = document.createElement('div');
+        templateBox.classList.add("col");
+        templateBox.classList.add("m-5");
+        templateBox.innerHTML = divNum;
+        document.getElementById('board-numbers').appendChild(templateBox);
+
+    }
+
+}
