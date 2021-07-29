@@ -16,7 +16,14 @@ Descrizione:
 let randomNum = randomNumbers();
 drawNumbers(randomNum);
 
-
+setTimeout(function(){
+    let cols = document.getElementsByClassName('col');
+    for (i = 0; i < cols.length; i++) {
+        cols[i].classList.add('ghost');
+    }
+    console.log(col);
+    // animate__rotateOutUpLeft
+},4000)
 
 
 /*  
@@ -55,5 +62,7 @@ function drawNumbers(randomNum) {
         document.getElementById('board-numbers').appendChild(templateBox);
 
     }
+
+    
 
 }
