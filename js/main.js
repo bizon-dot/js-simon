@@ -8,7 +8,29 @@ Descrizione:
     Dopo 30 secondi l'utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
     Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei numeri da indovinare sono stati individuati.
    
-Bonus:
+ Bonus:
     Introdurre la parte di grafica oltre a quella di logica :wink:
 
 */
+
+let randomNum = randomNumbers();
+
+
+/*  
+    =======================================================================================================
+        1.                              Genera un array contente 5 numeri casuali
+                                                senza duplicati
+    =======================================================================================================
+    
+*/
+
+function randomNumbers() {
+    let randomNumbers = [];
+    while (randomNumbers.length < 5) {
+        let num = Math.floor(Math.random() * 999) + 1;
+        if (!(randomNumbers.includes(num))) {
+            randomNumbers.push(num);
+        }
+    }
+    return randomNumbers;
+}
