@@ -2,4 +2,11 @@
 
 .ghost {
     display:none;
+    
+}
+
+.number {
+    font-size:50px;
+    text-align: center;
+    border: 1px solid grey;
 }

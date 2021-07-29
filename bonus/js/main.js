@@ -16,14 +16,22 @@ Descrizione:
 let randomNum = randomNumbers();
 drawNumbers(randomNum);
 
+
+var  t = 30;
+var timer = setInterval(function () {
+    document.getElementById("timer").innerHTML = `Hai ${t--} secondi per memorizzare i numeri`;
+}, 1000);
+
+
+
+
 setTimeout(function(){
     let cols = document.getElementsByClassName('col');
     for (i = 0; i < cols.length; i++) {
         cols[i].classList.add('ghost');
     }
-    console.log(col);
-    // animate__rotateOutUpLeft
-},4000)
+  
+},30000)
 
 
 /*  
@@ -58,6 +66,7 @@ function drawNumbers(randomNum) {
         let templateBox = document.createElement('div');
         templateBox.classList.add("col");
         templateBox.classList.add("m-5");
+        templateBox.classList.add("number");
         templateBox.innerHTML = divNum;
         document.getElementById('board-numbers').appendChild(templateBox);
 
